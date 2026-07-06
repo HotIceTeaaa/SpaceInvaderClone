@@ -1,0 +1,7 @@
+gamplay loop:
+- player main, bunuh musuh, pas mati scorenya di convert jadi coins, coins bs dipake buat beli ship tipe baru 
+
+Fitur:
+- ada tipe2 musuh yang speed, path, sama bulletnya beda (mungkin bullet biasa, laser, homing)
+- ship player bs beda2 yg hpnya beda sama shooting patternnya beda, mungkin tambah special ability jg kalo sempet
+

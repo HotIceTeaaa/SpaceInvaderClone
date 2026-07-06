@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 3ed754d8be893e34baf5ea085f04783e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7468115147626965808
+    second: 128x Reverse Invaders_0
+  - first:
+      213: -3198878785081041809
+    second: 128x Reverse Invaders_1
+  - first:
+      213: 3115680847010035565
+    second: 128x Reverse Invaders_2
+  - first:
+      213: 2928559617574240344
+    second: 128x Reverse Invaders_3
+  - first:
+      213: -5394345637385834112
+    second: 128x Reverse Invaders_4
+  - first:
+      213: -8371195328303071127
+    second: 128x Reverse Invaders_5
+  - first:
+      213: -2856124274602261830
+    second: 128x Reverse Invaders_6
+  - first:
+      213: -1553899934527847533
+    second: 128x Reverse Invaders_7
+  - first:
+      213: 6324478610179687219
+    second: 128x Reverse Invaders_8
+  - first:
+      213: -6271052762550003770
+    second: 128x Reverse Invaders_9
+  - first:
+      213: 5891135752719021131
+    second: 128x Reverse Invaders_10
+  - first:
+      213: 41865139580182927
+    second: 128x Reverse Invaders_11
+  - first:
+      213: 2677920770949289906
+    second: 128x Reverse Invaders_12
+  - first:
+      213: 6753298229574937903
+    second: 128x Reverse Invaders_13
+  - first:
+      213: 7512582932671061713
+    second: 128x Reverse Invaders_14
+  - first:
+      213: 5943401958404961670
+    second: 128x Reverse Invaders_15
+  - first:
+      213: 5389086413171914452
+    second: 128x Reverse Invaders_16
+  - first:
+      213: 2820648445269303368
+    second: 128x Reverse Invaders_17
+  - first:
+      213: 5292937312254569347
+    second: 128x Reverse Invaders_18
+  - first:
+      213: 528764759291750227
+    second: 128x Reverse Invaders_19
+  - first:
+      213: -4435306854335643561
+    second: 128x Reverse Invaders_20
+  - first:
+      213: -3653933770799876785
+    second: 128x Reverse Invaders_21
+  - first:
+      213: -118994124776158655
+    second: 128x Reverse Invaders_22
+  - first:
+      213: -5400013308743707062
+    second: 128x Reverse Invaders_23
+  - first:
+      213: -1000105266637126279
+    second: 128x Reverse Invaders_24
+  - first:
+      213: 6596514426179258102
+    second: 128x Reverse Invaders_25
+  - first:
+      213: 659575938264970571
+    second: 128x Reverse Invaders_26
+  - first:
+      213: -6000027015775237893
+    second: 128x Reverse Invaders_27
+  - first:
+      213: -4933445487928020835
+    second: 128x Reverse Invaders_28
+  - first:
+      213: 2801583236854159222
+    second: 128x Reverse Invaders_29
+  - first:
+      213: -2971778072151770374
+    second: 128x Reverse Invaders_30
+  - first:
+      213: -2716081530101421765
+    second: 128x Reverse Invaders_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 129
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d41bfb47dceb5890800000000000000
+      internalID: -7468115147626965808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c16bf71bc4b93d0800000000000000
+      internalID: -3198878785081041809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d677587093f1d3b20800000000000000
+      internalID: 3115680847010035565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 113
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850011db47554a820800000000000000
+      internalID: 2928559617574240344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 112
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08170f7293f6325b0800000000000000
+      internalID: -5394345637385834112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_5
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960061f833a83db80800000000000000
+      internalID: -8371195328303071127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 99
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab246f9ca120d58d0800000000000000
+      internalID: -2856124274602261830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_7
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 112
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39307f11e307f6ae0800000000000000
+      internalID: -1553899934527847533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333015599cf05c750800000000000000
+      internalID: 6324478610179687219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_9
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 98
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c79978ecbeb8f8a0800000000000000
+      internalID: -6271052762550003770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_10
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 98
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44bb6821c481c150800000000000000
+      internalID: 5891135752719021131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_11
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 67
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8126256f1cb49000800000000000000
+      internalID: 41865139580182927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b79211c0c2e92520800000000000000
+      internalID: 2677920770949289906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 63
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2da61495f888bd50800000000000000
+      internalID: 6753298229574937903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_14
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 67
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de5587bf5e024860800000000000000
+      internalID: 7512582932671061713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 65
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685b61877943b7250800000000000000
+      internalID: 5943401958404961670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_16
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 63
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6fef84a81e9ca40800000000000000
+      internalID: 5389086413171914452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_17
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 18
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 840e88801d4f42720800000000000000
+      internalID: 2820648445269303368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_18
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 37
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b285b317a447940800000000000000
+      internalID: 5292937312254569347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_19
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 37
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357645f3fbc865700800000000000000
+      internalID: 528764759291750227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_20
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 18
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750087d4aef9272c0800000000000000
+      internalID: -4435306854335643561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_21
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 15
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f457ba6489e9a4dc0800000000000000
+      internalID: -3653933770799876785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_22
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14acb56597f395ef0800000000000000
+      internalID: -118994124776158655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4613f5918c4f05b0800000000000000
+      internalID: -5400013308743707062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_24
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 975c81c0f89ee12f0800000000000000
+      internalID: -1000105266637126279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_25
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f68728bbe68b8b50800000000000000
+      internalID: 6596514426179258102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_26
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45bdae32d8472900800000000000000
+      internalID: 659575938264970571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_27
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf848f9f73f9bbca0800000000000000
+      internalID: -6000027015775237893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_28
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 1
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90fb4d9771e88bb0800000000000000
+      internalID: -4933445487928020835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_29
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67791694c1931e620800000000000000
+      internalID: 2801583236854159222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_30
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa391aa69f12c6d0800000000000000
+      internalID: -2971778072151770374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 128x Reverse Invaders_31
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b392e412d3a8e4ad0800000000000000
+      internalID: -2716081530101421765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      128x Reverse Invaders_0: -7468115147626965808
+      128x Reverse Invaders_1: -3198878785081041809
+      128x Reverse Invaders_10: 5891135752719021131
+      128x Reverse Invaders_11: 41865139580182927
+      128x Reverse Invaders_12: 2677920770949289906
+      128x Reverse Invaders_13: 6753298229574937903
+      128x Reverse Invaders_14: 7512582932671061713
+      128x Reverse Invaders_15: 5943401958404961670
+      128x Reverse Invaders_16: 5389086413171914452
+      128x Reverse Invaders_17: 2820648445269303368
+      128x Reverse Invaders_18: 5292937312254569347
+      128x Reverse Invaders_19: 528764759291750227
+      128x Reverse Invaders_2: 3115680847010035565
+      128x Reverse Invaders_20: -4435306854335643561
+      128x Reverse Invaders_21: -3653933770799876785
+      128x Reverse Invaders_22: -118994124776158655
+      128x Reverse Invaders_23: -5400013308743707062
+      128x Reverse Invaders_24: -1000105266637126279
+      128x Reverse Invaders_25: 6596514426179258102
+      128x Reverse Invaders_26: 659575938264970571
+      128x Reverse Invaders_27: -6000027015775237893
+      128x Reverse Invaders_28: -4933445487928020835
+      128x Reverse Invaders_29: 2801583236854159222
+      128x Reverse Invaders_3: 2928559617574240344
+      128x Reverse Invaders_30: -2971778072151770374
+      128x Reverse Invaders_31: -2716081530101421765
+      128x Reverse Invaders_4: -5394345637385834112
+      128x Reverse Invaders_5: -8371195328303071127
+      128x Reverse Invaders_6: -2856124274602261830
+      128x Reverse Invaders_7: -1553899934527847533
+      128x Reverse Invaders_8: 6324478610179687219
+      128x Reverse Invaders_9: -6271052762550003770
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
