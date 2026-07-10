@@ -1,11 +1,17 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace SpaceInvader
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _playerObject;
+        [Header("Wave Related")]
+        [SerializeField] private WaveSO[] _waveSO;
+        [SerializeField] private bool _isLooping;
+        [SerializeField] private float _timeBetweenWaves;
+
+        public int currentWave;
         public static GameManager Instance { get; private set; }
 
         void Awake() {
@@ -15,19 +21,29 @@ namespace SpaceInvader
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
 
-        private void OnEnable() {
-            //EventManager.Instance.OnPlayerHit += HandlePlayerTakeDamage;
-        }
+        public void GameStart() {
+            DataAndStates.Instance.isGameStart = true;
+            DataAndStates.Instance.isGameOver = false;
 
-        private void OnDisable() {
-            //EventManager.Instance.OnPlayerHit -= HandlePlayerTakeDamage;
+            StartCoroutine(BeginGameplay());
         }
 
         private void Update() {
-            HandleCanShoot();
+            if (DataAndStates.Instance.isGameStart) {
+                HandleCanShoot();
+            }
+        }
+
+        IEnumerator BeginGameplay() 
+        {
+            foreach (WaveSO wave in _waveSO) {
+                currentWave = wave.waveNumber;
+                StartCoroutine(WaveManager.Instance.BeginWave(wave));
+                yield return new WaitForSeconds(_timeBetweenWaves);
+            }
         }
 
         public void HandleCanShoot() {
@@ -45,7 +61,7 @@ namespace SpaceInvader
             DataAndStates.Instance.DecreasePlayerHP(dmg);
 
             if(DataAndStates.Instance.hp <= 0f) {
-                Destroy(_playerObject);
+                Destroy(GameplayInitializer.Instance.player);
                 //game over
             } else {
                 UI_Gameplay.Instance.UpdateHPBar();

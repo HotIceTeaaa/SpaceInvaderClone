@@ -29,14 +29,9 @@ namespace SpaceInvader
             DontDestroyOnLoad(gameObject);
         }
 
-        private void Start() {
-            Initialize();
-        }
-
         public void Initialize() {
             canShoot = true;
             shootTimer = new Timer(shootCooldown);
-
             hp = maxHP;
         }
 

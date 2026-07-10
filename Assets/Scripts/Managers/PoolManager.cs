@@ -1,11 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum BulletType {
-    Player,
-    Enemy,
-}
-
 namespace SpaceInvader
 {
     public class PoolManager : MonoBehaviour {
@@ -68,7 +63,7 @@ namespace SpaceInvader
             return obj;
         }
 
-        public GameObject GetAndSetPositionRotation(Vector3 position, Quaternion rotation) {
+        public GameObject GetAndSetPositionRotation(EnemyType enemyType, Vector3 position, Quaternion rotation) {
             GameObject obj = _enemyShelf.Dequeue();
 
             obj.transform.SetPositionAndRotation(position, rotation);
