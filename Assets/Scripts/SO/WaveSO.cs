@@ -12,6 +12,7 @@ namespace SpaceInvader
 
         [SerializeField] public GameObject[] paths;
         [SerializeField] public float enemySpeedMultiplier;
+        [SerializeField] public float enemySpawnMultiplier;
 
         [Serializable]
         public struct EnemyDetails {

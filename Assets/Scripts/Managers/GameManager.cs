@@ -24,11 +24,28 @@ namespace SpaceInvader
             //DontDestroyOnLoad(gameObject);
         }
 
+        public void Initialize()
+        {
+            foreach (WaveSO waveSO in _waveSO) {
+                waveSO.Initialize();
+            }
+
+            GameStart();
+        }
+
         public void GameStart() {
             DataAndStates.Instance.isGameStart = true;
             DataAndStates.Instance.isGameOver = false;
 
             StartCoroutine(BeginGameplay());
+        }
+
+        public void GameOver() {
+            DataAndStates.Instance.isGameStart = false;
+            DataAndStates.Instance.isGameOver = true;
+            
+            AddAndSaveCoins();
+            UI_Gameplay.Instance.PlayEndScreen();
         }
 
         private void Update() {
@@ -62,10 +79,18 @@ namespace SpaceInvader
 
             if(DataAndStates.Instance.hp <= 0f) {
                 Destroy(GameplayInitializer.Instance.player);
-                //game over
+                GameOver();
             } else {
                 //UI_Gameplay.Instance.UpdateHPBar();
             }
+        }
+
+        private void AddAndSaveCoins(){
+            float coin = DataAndStates.Instance.CalculateAndSetCoin();
+            float coinFromPrefs = PlayerPreferences.Instance.GetFloat("coin", -9999);
+
+            coinFromPrefs += coin;
+            PlayerPreferences.Instance.SaveFloat("coin", coinFromPrefs);
         }
     }
 }

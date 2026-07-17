@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &800718362010713866
+--- !u!1 &3149933713511852590
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2797705035708219723}
-  - component: {fileID: 6453502992117397843}
+  - component: {fileID: 1552188236607628456}
+  - component: {fileID: 3324338378444051476}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SceneHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2797705035708219723
+--- !u!4 &1552188236607628456
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800718362010713866}
+  m_GameObject: {fileID: 3149933713511852590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,20 +32,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6453502992117397843
+--- !u!114 &3324338378444051476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800718362010713866}
+  m_GameObject: {fileID: 3149933713511852590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f2dee7af749274d9b7b2f7453cabe6, type: 3}
+  m_Script: {fileID: 11500000, guid: d95b195e122e515499a362920430839e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  _waveSO:
-  - {fileID: 11400000, guid: e57c0e90f87981643850b7be71749a3a, type: 2}
-  _isLooping: 1
-  _timeBetweenWaves: 20
-  currentWave: 0
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceInvader.SceneHandler

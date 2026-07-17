@@ -47,7 +47,8 @@ MonoBehaviour:
   isGameStart: 0
   isGameOver: 0
   shootCooldown: 0
-  maxHP: 5
+  maxHP: 1000
   canShoot: 0
   hp: 0
   score: 0
+  coin: 0

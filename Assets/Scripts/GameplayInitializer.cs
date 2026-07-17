@@ -13,17 +13,23 @@ namespace SpaceInvader
 
         [Header("UI")]
         [SerializeField] public Canvas canvas;
+        [SerializeField] public GameObject background;
+        [SerializeField] public GameObject fog;
         [SerializeField] public UI_Gameplay ui_gameplay;
+        [SerializeField] public UI_EndScreen ui_endScreen;
         [SerializeField] public EventSystem eventSystem;
 
         [Header("Core")]
         [SerializeField] public GameObject player;
+        [SerializeField] public Player playerScript;
         [SerializeField] public DataAndStates dataAndStates;
-
+        
         [Header("Managers")]
         [SerializeField] public GameManager gameManager;
         [SerializeField] public WaveManager waveManager;
         [SerializeField] public PoolManager poolManager;
+        [SerializeField] public SceneHandler sceneHandler;
+        [SerializeField] public PlayerPreferences prefs;
 
         [Header("Others")]
         [SerializeField] public WaveSO[] waveSOs;
@@ -44,10 +50,6 @@ namespace SpaceInvader
         }
 
         private void Start() {
-
-            foreach (WaveSO waveSO in waveSOs) {
-                waveSO.Initialize();
-            }
 
             dataAndStates.Initialize();
             gameManager.GameStart();

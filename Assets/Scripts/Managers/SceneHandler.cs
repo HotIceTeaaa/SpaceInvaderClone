@@ -2,7 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace InfiniteRunner {
+namespace SpaceInvader
+{
     public class SceneHandler : MonoBehaviour {
         public static SceneHandler Instance { get; private set; }
         private void Awake() {
@@ -15,7 +16,7 @@ namespace InfiniteRunner {
 
             DontDestroyOnLoad(gameObject);
         }
-
+        
 
         public void LoadSceneByString(string sceneName) {
             SceneManager.LoadScene(sceneName);

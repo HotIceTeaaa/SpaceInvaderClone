@@ -4,11 +4,6 @@ namespace SpaceInvader
 {
     public class UI_Gameplay : MonoBehaviour
     {
-   
-
-        [Header("Game Over Screen Related")]
-        [SerializeField] private GameObject _endScreenPanel;
-
         public static UI_Gameplay Instance { get; private set; }
 
         void Awake() {
@@ -21,14 +16,15 @@ namespace SpaceInvader
             //DontDestroyOnLoad(gameObject);
         }
 
-        public void Initialize(GameObject endScreenPanel, GameObject hpFrontBar){
-            BindObjects(endScreenPanel, hpFrontBar);
+        public void UpdateHPBar() {
+            GameplayInitializer.Instance.playerScript.UpdateHPBar();
         }
 
-        private void BindObjects(GameObject endScreenPanel, GameObject hpFrontBar) {
-            _endScreenPanel = Instantiate(endScreenPanel);
+        public void PlayEndScreen()
+        {
+            GameplayInitializer.Instance.ui_endScreen.ShowEndScreen();
+            GameplayInitializer.Instance.ui_endScreen.AnimateScoreText();
+            GameplayInitializer.Instance.ui_endScreen.AnimateCoinText();
         }
-
-        
     }
 }

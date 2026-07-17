@@ -63,7 +63,7 @@ namespace SpaceInvader
             return obj;
         }
 
-        public GameObject GetAndSetPositionRotation(EnemyType enemyType, Vector3 position, Quaternion rotation) {
+        public GameObject GetAndSetPositionRotation(Vector3 position, Quaternion rotation) {
             GameObject obj = _enemyShelf.Dequeue();
 
             obj.transform.SetPositionAndRotation(position, rotation);
