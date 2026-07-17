@@ -16,6 +16,7 @@ namespace SpaceInvader
         public bool canShoot;
         public float hp;
         public float score;
+        public float coin;
 
         public static DataAndStates Instance { get; private set; }
         private void Awake() {
@@ -37,6 +38,12 @@ namespace SpaceInvader
 
         public void DecreasePlayerHP(float damage) {
             hp -= damage;
+        }
+
+        public float CalculateAndSetCoin()
+        {
+            coin = score / 5;
+            return coin;
         }
     }
 }

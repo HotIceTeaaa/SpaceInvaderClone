@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7762418765590663094}
   - component: {fileID: 1382197395895343740}
   - component: {fileID: 8170957397714503123}
-  - component: {fileID: -7295224332761606906}
   m_Layer: 3
   m_Name: EnemyBasePrefab
   m_TagString: Enemy
@@ -83,14 +82,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.18}
+  m_Size: {x: 0.1, y: 0.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -133,8 +132,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.13}
-    newSize: {x: 0.16, y: 0.18}
+    oldSize: {x: 0.18, y: 0.18}
+    newSize: {x: 0.1, y: 0.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -180,26 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9336d2aa932f1af448f4e978ff8fb7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _type: 0
   _spriteRenderer: {fileID: 4559213393590288460}
-  _shooterSprite: {fileID: 2928559617574240344, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  _bomberSprite: {fileID: -3198878785081041809, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  _lasererSprite: {fileID: -1553899934527847533, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  _enemyBulletLifespan: 5
-  _shootCooldown: 1
-  _shootThreshold: 0.5
-  _scoreWorth: 100
-  _hp: 5
---- !u!114 &-7295224332761606906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777130959294620410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7cb23c4af65b7643bedbc74a69e9db2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpaceInvader.FollowWaypoint
-  _speed: 0.1
+  _enemySOs:
+  - {fileID: 11400000, guid: 6e1412c98f61c2c47871f9f81912b772, type: 2}
+  - {fileID: 11400000, guid: f86bf04810f8bf24fa63444bec225054, type: 2}
+  - {fileID: 11400000, guid: b2b6d48bb237b924dad7dc88fd468b44, type: 2}

@@ -5,64 +5,49 @@ namespace SpaceInvader
 {
     public class Enemy : MonoBehaviour
     {
-        [Header("Enemy Type")]
-        [SerializeField] private EnemyType _type;
-
-        [Header("Enemy Sprite Related")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
-        [SerializeField] private Sprite _shooterSprite;
-        [SerializeField] private Sprite _bomberSprite;
-        [SerializeField] private Sprite _lasererSprite;
-
-        [Header("Shooting Related")]
-        [SerializeField] private float _enemyBulletLifespan;
-        [SerializeField] private float _shootCooldown;
-        [SerializeField] private float _shootThreshold;
-
-        [Header("Other")]
-        [SerializeField] private float _scoreWorth;
-        [SerializeField] private float _hp;
-
+        [SerializeField] private EnemySO[] _enemySOs;
+        private EnemySO _selectedEnemySO;
         private Timer _shootTimer;
+        private Transform[] _waypoints;
+        private int _waypointIndex = 0;
+        private float _speedMultiplier;
 
-        public void Initialize(EnemyType type) {
-            _shootTimer = new Timer(_shootCooldown);
-
+        public void Initialize(EnemyType type, Transform pathTransform, float speedMultiplier) {
             switch (type) {
                 case EnemyType.Shooter:
-                    _spriteRenderer.sprite = _shooterSprite;
-
-                    _enemyBulletLifespan = 5f;
-                    _shootCooldown = 1;
-                    _shootThreshold = 0.5f;
-                    _scoreWorth = 100;
-                    _hp = 5;
+                    _selectedEnemySO = _enemySOs[0];
                     break;
 
                 case EnemyType.Bomber:
-                    _spriteRenderer.sprite = _bomberSprite;
-
-                    _enemyBulletLifespan = 5f;
-                    _shootCooldown = 1;
-                    _shootThreshold = 0.5f;
-                    _scoreWorth = 300;
-                    _hp = 10;
+                    _selectedEnemySO = _enemySOs[1];
                     break;
 
                 case EnemyType.Laserer:
-                    _spriteRenderer.sprite = _lasererSprite;
-
-                    _enemyBulletLifespan = 0.8f;
-                    _shootCooldown = 1;
-                    _shootThreshold = 0.5f;
-                    _scoreWorth = 200;
-                    _hp = 3;
+                    _selectedEnemySO = _enemySOs[2];
                     break;
+            }
+
+            //init sprite
+            _spriteRenderer.sprite = _selectedEnemySO.sprite;
+            _shootTimer = new Timer(_selectedEnemySO.shootCooldown);
+
+            //init speed multiplier 
+            _speedMultiplier = speedMultiplier;
+
+            //init waypoints 
+            _waypoints = new Transform[pathTransform.childCount];
+            for (int i = 0; i < pathTransform.childCount; i++) {
+                _waypoints[i] = pathTransform.GetChild(i).transform;
             }
         }
 
         private void Update() {
             if (DataAndStates.Instance.isGameStart) {
+                //follow waypoint
+                FollowPath();
+
+                //shoot
                 _shootTimer.DecrementTimer();
 
                 if (_shootTimer.isDone()) {
@@ -73,11 +58,11 @@ namespace SpaceInvader
         }
 
         private void AttemptShoot() {
-            if (Random.value < _shootThreshold) {
+            if (Random.value < _selectedEnemySO.shootThreshold) {
                 Vector3 bulletSpawnPos = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
                 GameObject enemyBullet = PoolManager.Instance.GetAndSetPositionRotation(BulletType.Enemy, bulletSpawnPos, Quaternion.identity);
 
-                StartCoroutine(ReturnAfter(BulletType.Enemy, enemyBullet, _enemyBulletLifespan));
+                StartCoroutine(ReturnAfter(BulletType.Enemy, enemyBullet, _selectedEnemySO.enemyBulletLifespan));
             }
         }
 
@@ -90,11 +75,25 @@ namespace SpaceInvader
         }
 
         public void HandleEnemyTakeDamage(float dmg) {
-            _hp -= dmg;
+            _selectedEnemySO.hp -= dmg;
 
-            if (_hp <= 0f) {
+            if (_selectedEnemySO.hp <= 0f) {
                 PoolManager.Instance.Return(gameObject);
-                DataAndStates.Instance.score += _scoreWorth;
+                DataAndStates.Instance.score += _selectedEnemySO.scoreWorth;
+            }
+        }
+
+        void FollowPath() {
+            if (_waypointIndex < _waypoints.Length) {
+                Vector3 targetPosition = _waypoints[_waypointIndex].position;
+                float moveDelta = _selectedEnemySO.speed * _speedMultiplier * Time.deltaTime;
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveDelta);
+
+                if (transform.position == targetPosition) {
+                    _waypointIndex++;
+                }
+            } else {
+                PoolManager.Instance.Return(gameObject);
             }
         }
     }
