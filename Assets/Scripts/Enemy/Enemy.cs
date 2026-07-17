@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+
 
 namespace SpaceInvader
 {
@@ -15,7 +15,6 @@ namespace SpaceInvader
         [SerializeField] private Sprite _lasererSprite;
 
         [Header("Shooting Related")]
-        [SerializeField] private float _enemyBulletLifespan;
         [SerializeField] private float _shootCooldown;
         [SerializeField] private float _shootThreshold;
 
@@ -32,7 +31,6 @@ namespace SpaceInvader
                 case EnemyType.Shooter:
                     _spriteRenderer.sprite = _shooterSprite;
 
-                    _enemyBulletLifespan = 5f;
                     _shootCooldown = 1;
                     _shootThreshold = 0.5f;
                     _scoreWorth = 100;
@@ -42,7 +40,6 @@ namespace SpaceInvader
                 case EnemyType.Bomber:
                     _spriteRenderer.sprite = _bomberSprite;
 
-                    _enemyBulletLifespan = 5f;
                     _shootCooldown = 1;
                     _shootThreshold = 0.5f;
                     _scoreWorth = 300;
@@ -52,7 +49,6 @@ namespace SpaceInvader
                 case EnemyType.Laserer:
                     _spriteRenderer.sprite = _lasererSprite;
 
-                    _enemyBulletLifespan = 0.8f;
                     _shootCooldown = 1;
                     _shootThreshold = 0.5f;
                     _scoreWorth = 200;
@@ -75,19 +71,9 @@ namespace SpaceInvader
         private void AttemptShoot() {
             if (Random.value < _shootThreshold) {
                 Vector3 bulletSpawnPos = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
-                GameObject enemyBullet = PoolManager.Instance.GetAndSetPositionRotation(BulletType.Enemy, bulletSpawnPos, Quaternion.identity);
-
-                StartCoroutine(ReturnAfter(BulletType.Enemy, enemyBullet, _enemyBulletLifespan));
+                PoolManager.Instance.GetAndSetPositionRotation(BulletType.Enemy, bulletSpawnPos, Quaternion.identity);
             }
-        }
-
-        private IEnumerator ReturnAfter(BulletType type, GameObject obj, float lifespan) {
-            yield return new WaitForSeconds(lifespan);
-
-            if (obj.activeSelf) {
-                PoolManager.Instance.Return(type, obj);
-            }
-        }
+        } 
 
         public void HandleEnemyTakeDamage(float dmg) {
             _hp -= dmg;

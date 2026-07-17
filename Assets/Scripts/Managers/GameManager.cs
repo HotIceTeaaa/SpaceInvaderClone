@@ -64,7 +64,7 @@ namespace SpaceInvader
                 Destroy(GameplayInitializer.Instance.player);
                 //game over
             } else {
-                UI_Gameplay.Instance.UpdateHPBar();
+                //UI_Gameplay.Instance.UpdateHPBar();
             }
         }
     }

@@ -185,7 +185,6 @@ MonoBehaviour:
   _shooterSprite: {fileID: 2928559617574240344, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
   _bomberSprite: {fileID: -3198878785081041809, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
   _lasererSprite: {fileID: -1553899934527847533, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  _enemyBulletLifespan: 5
   _shootCooldown: 1
   _shootThreshold: 0.5
   _scoreWorth: 100
@@ -202,4 +201,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cb23c4af65b7643bedbc74a69e9db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceInvader.FollowWaypoint
-  _speed: 0.1
+  _speed: 0

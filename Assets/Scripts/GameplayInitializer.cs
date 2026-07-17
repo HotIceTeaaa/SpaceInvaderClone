@@ -8,6 +8,7 @@ namespace SpaceInvader
     {
         [Header("Setup")]
         [SerializeField] new public Camera camera;
+        [SerializeField] public CameraShake cameraShakeScript;
         [SerializeField] public Light2D globalLight;
 
         [Header("UI")]
@@ -26,8 +27,8 @@ namespace SpaceInvader
 
         [Header("Others")]
         [SerializeField] public WaveSO[] waveSOs;
-        [SerializeField] public GameObject endScreenPanel;
-        [SerializeField] public GameObject hpFrontBar;
+        //[SerializeField] public GameObject endScreenPanel;
+        //[SerializeField] public HP_Test HP_Test;
 
         public static GameplayInitializer Instance { get; private set; }
 
@@ -43,7 +44,6 @@ namespace SpaceInvader
         }
 
         private void Start() {
-            BindObjects();
 
             foreach (WaveSO waveSO in waveSOs) {
                 waveSO.Initialize();
@@ -51,23 +51,7 @@ namespace SpaceInvader
 
             dataAndStates.Initialize();
             gameManager.GameStart();
-            ui_gameplay.Initialize(endScreenPanel, hpFrontBar);
-        }
-
-        private void BindObjects() {
-            camera = Instantiate(camera);
-            globalLight = Instantiate(globalLight);
-
-            canvas = Instantiate(canvas);
-            ui_gameplay = Instantiate(ui_gameplay);
-            eventSystem = Instantiate(eventSystem);
-
-            player = Instantiate(player);
-            dataAndStates = Instantiate(dataAndStates);
-
-            gameManager = Instantiate(gameManager);
-            waveManager = Instantiate(waveManager);
-            poolManager = Instantiate(poolManager);
+            cameraShakeScript.Initialize();
         }
     }
 }

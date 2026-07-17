@@ -73,7 +73,6 @@ namespace SpaceInvader
         }
 
         public void Return(BulletType type, GameObject obj) {
-            obj.SetActive(false);
 
             switch (type) {
                 case BulletType.Player:
@@ -83,11 +82,12 @@ namespace SpaceInvader
                     _enemyBulletShelf.Enqueue(obj);
                     break;
             }
+            obj.SetActive(false);
         }
 
         public void Return(GameObject obj) {
-            obj.SetActive(false);
             _enemyShelf.Enqueue(obj);
+            obj.SetActive(false);
         }
 
         private GameObject CreateNew(GameObject prefab) {

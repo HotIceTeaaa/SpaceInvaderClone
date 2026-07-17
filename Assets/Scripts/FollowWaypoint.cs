@@ -43,13 +43,16 @@ namespace SpaceInvader {
         void FollowPath() {
             if (_waypointIndex < _waypoints.Length) {
                 Vector3 targetPosition = _waypoints[_waypointIndex].position;
+                Debug.Log(targetPosition);
                 float moveDelta = _speed * _speedMultiplier * Time.deltaTime;
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveDelta);
 
                 if (transform.position == targetPosition) {
                     _waypointIndex++;
                 }
-            } else {
+            } 
+            else 
+            {
                 PoolManager.Instance.Return(gameObject);
             }
         }
