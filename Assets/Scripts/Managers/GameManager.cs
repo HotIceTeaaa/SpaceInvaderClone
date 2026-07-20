@@ -11,10 +11,13 @@ namespace SpaceInvader
         [SerializeField] private bool _isLooping;
         [SerializeField] private float _timeBetweenWaves;
 
+        [Header("Player Related")]
+        [SerializeField] private PlayerShipSO[] _playerShipSO;
+
         [Header("Score Multiplier Related")]
         [SerializeField] private float _increasePointBy;
         [SerializeField] private float _decreasePointBy;
-        [SerializeField] private float _increaseLevelThreshold;
+        [SerializeField] public float _increaseLevelThreshold;
 
         [Header("Other")]
         public int currentWave;
@@ -35,6 +38,11 @@ namespace SpaceInvader
             foreach (WaveSO waveSO in _waveSO) {
                 waveSO.Initialize();
             }
+
+            int i = PlayerPreferences.Instance.GetInt("shipType", 0);
+            GameplayInitializer.Instance.playerScript.Initialize(_playerShipSO[i]);
+            GameplayInitializer.Instance.playerBulletScript.Initialize(_playerShipSO[i]);
+            DataAndStates.Instance.Initialize(_playerShipSO[i]);
 
             ResetScoreMultiplier();
             GameStart();
@@ -59,6 +67,11 @@ namespace SpaceInvader
             if (DataAndStates.Instance.isGameStart) {
                 HandleCanShoot();
                 DecreaseScoreMultiplier();
+
+                //update UI nya
+                UI_Gameplay.Instance.UpdateScoreValue();
+                UI_Gameplay.Instance.UpdateMultiplierValue();
+                UI_Gameplay.Instance.UpdateGaugeValue();
             }
         }
 
@@ -94,11 +107,11 @@ namespace SpaceInvader
         }
 
         private void AddAndSaveCoins(){
-            float coin = DataAndStates.Instance.CalculateAndSetCoin();
-            float coinFromPrefs = PlayerPreferences.Instance.GetFloat("coin", -9999);
+            int coin = DataAndStates.Instance.CalculateAndSetCoin();
+            int coinFromPrefs = PlayerPreferences.Instance.GetInt("coin", -9999);
 
             coinFromPrefs += coin;
-            PlayerPreferences.Instance.SaveFloat("coin", coinFromPrefs);
+            PlayerPreferences.Instance.SaveInt("coin", coinFromPrefs);
         }
 
         public void IncreaseScoreMultiplier()
@@ -134,6 +147,10 @@ namespace SpaceInvader
         {
             DataAndStates.Instance.level = 1;
             DataAndStates.Instance.point = 0;
+
+            UI_Gameplay.Instance.UpdateScoreValue();
+            UI_Gameplay.Instance.UpdateMultiplierValue();
+            UI_Gameplay.Instance.UpdateGaugeValue();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SpaceInvader
         [Header("Core")]
         [SerializeField] public GameObject player;
         [SerializeField] public Player playerScript;
-        [SerializeField] public DataAndStates dataAndStates;
+        [SerializeField] public PlayerBullet playerBulletScript;
         
         [Header("Managers")]
         [SerializeField] public GameManager gameManager;
@@ -36,7 +36,6 @@ namespace SpaceInvader
         }
 
         private void Start() {
-            dataAndStates.Initialize();
             gameManager.Initialize();
             cameraShakeScript.Initialize();
         }

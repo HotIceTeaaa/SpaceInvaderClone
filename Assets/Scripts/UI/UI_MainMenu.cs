@@ -74,5 +74,10 @@ namespace SpaceInvader
             TMP_Text text = button.GetComponentInChildren<TMP_Text>();
             text.text = "Select";
         }
+
+        public void PlayButton()
+        {
+            SceneHandler.Instance.LoadNextScene();
+        }
     }
 }

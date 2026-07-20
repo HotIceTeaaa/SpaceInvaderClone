@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,25 +15,27 @@ namespace SpaceInvader
             _endScreenPanel.SetActive(true);
         }
 
-        public void AnimateScoreText(){
+        public IEnumerator AnimateScoreText(){
             float temp = 0f;
 
             while (temp < DataAndStates.Instance.score)
             {
                 _scoreText.text = $"{temp}";
                 temp += Random.Range(10, 20);
+                yield return new WaitForSeconds(0.01f);
             }
 
             _scoreText.text = $"{DataAndStates.Instance.score}";
         }
 
-        public void AnimateCoinText(){
+        public IEnumerator AnimateCoinText(){
             float temp = 0f;
 
             while (temp < DataAndStates.Instance.coin)
             {
                 _coinsText.text = $"{temp}";
                 temp += Random.Range(10, 20);
+                yield return new WaitForSeconds(0.01f);
             }
 
             _coinsText.text = $"{DataAndStates.Instance.coin}";

@@ -8,3 +8,10 @@ public enum EnemyType {
     Laserer
 }
 
+public enum ShipType
+{
+    Grape,
+    Peach,
+    Dates,
+}
+

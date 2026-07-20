@@ -10,9 +10,16 @@ namespace SpaceInvader
         [SerializeField] private float _damage;
         [SerializeField] private float _playerBulletLifespan;
 
-        public void Onable()
+        public void OnEnable()
         {
             StartCoroutine(ReturnAfter(BulletType.Player, gameObject, _playerBulletLifespan));
+        }
+
+        public void Initialize(PlayerShipSO playerShipSO)
+        {
+            _speed = playerShipSO.speed;
+            _damage = playerShipSO.damage;
+            _playerBulletLifespan = playerShipSO.lifetime;
         }
 
         void Update()
@@ -30,7 +37,6 @@ namespace SpaceInvader
                 enemyScript.HandleEnemyTakeDamage(_damage);
 
                 PoolManager.Instance.Return(BulletType.Player, gameObject);
-                GameManager.Instance.IncreaseScoreMultiplier();
             }
         }
 

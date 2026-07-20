@@ -8,6 +8,7 @@ namespace SpaceInvader {
         [SerializeField] private float _damage;
         [SerializeField] private float _enemyBulletLifespan;
 
+
         public void OnEnable()
         {
             StartCoroutine(ReturnAfter(BulletType.Enemy, gameObject, _enemyBulletLifespan));

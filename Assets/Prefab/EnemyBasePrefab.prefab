@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _spriteRenderer: {fileID: 4559213393590288460}
+  _particleSystem: {fileID: 0}
   _enemySOs:
   - {fileID: 11400000, guid: 6e1412c98f61c2c47871f9f81912b772, type: 2}
   - {fileID: 11400000, guid: f86bf04810f8bf24fa63444bec225054, type: 2}

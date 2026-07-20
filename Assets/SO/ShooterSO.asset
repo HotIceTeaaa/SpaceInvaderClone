@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ShooterSO
   m_EditorClassIdentifier: Assembly-CSharp::SpaceInvader.EnemySO
   sprite: {fileID: 2928559617574240344, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  enemyBulletLifespan: 5
+  enemyBulletLifespan: 2
   shootCooldown: 1
-  shootThreshold: 0.5
+  shootThreshold: 0.3
   scoreWorth: 100
-  hp: 5
-  speed: 1
+  hp: 1
+  speed: 1.5

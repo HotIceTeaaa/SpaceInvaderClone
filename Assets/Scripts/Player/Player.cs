@@ -5,37 +5,45 @@ namespace SpaceInvader
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         [Header("Health Bar Related")]
         [SerializeField] private Image image;
 
+        private PlayerShipSO shipSO;
+
+        public void Initialize(PlayerShipSO playerShipSO)
+        {
+            shipSO = playerShipSO;
+            spriteRenderer.sprite = playerShipSO.sprite;
+        }
 
         public void Shoot() {
             if (DataAndStates.Instance.canShoot) {
                 Vector3 bulletSpawnPos = Vector3.zero;
                 
-                switch(PlayerPreferences.Instance.GetInt("shipType", 0))
+                switch(shipSO.type)
                 {
-                    case 0:
+                    case ShipType.Grape:
                         bulletSpawnPos = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                         PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.identity);
                         break;
 
-                    case 1:
+                    case ShipType.Peach:
                         bulletSpawnPos = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                         PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.identity);
                         bulletSpawnPos = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-                        PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.Euler(0, 0, 30));
+                        PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.Euler(0, 0, 15));
                         bulletSpawnPos = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-                        PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.Euler(0, 0, -30));
+                        PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.Euler(0, 0, -15));
                         break;
 
-                    case 2:
-                        bulletSpawnPos = new Vector3(transform.position.x - 0.1f, transform.position.y + 0.3f, transform.position.z);
+                    case ShipType.Dates:
+                        bulletSpawnPos = new Vector3(transform.position.x - 0.3f, transform.position.y + 0.3f, transform.position.z);
                         PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.identity);
                         bulletSpawnPos = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                         PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.identity);
-                        bulletSpawnPos = new Vector3(transform.position.x + 0.1f, transform.position.y + 0.3f, transform.position.z);
+                        bulletSpawnPos = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.3f, transform.position.z);
                         PoolManager.Instance.GetAndSetPositionRotation(BulletType.Player, bulletSpawnPos, Quaternion.identity);
                         break;
 

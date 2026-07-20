@@ -42,8 +42,15 @@ namespace SpaceInvader
 
         [ContextMenu("Print Coins")]
         public void PrintCoins() {
-            int coins = PlayerPrefs.GetInt("coins", -999);
+            int coins = PlayerPrefs.GetInt("coin", 0);
             Debug.Log(coins);
+        }
+
+        [ContextMenu("Set Coins 1000")]
+        public void SetCoins1000()
+        {
+            SaveInt("coin", 1000);
+
         }
     }
 }
