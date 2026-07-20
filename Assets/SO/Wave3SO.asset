@@ -16,6 +16,7 @@ MonoBehaviour:
   paths:
   - {fileID: 8307226804824319664, guid: ccb9734a2af951c499b9680fe7a41f90, type: 3}
   enemySpeedMultiplier: 1
+  enemySpawnMultiplier: 1
   enemyList:
   - type: 1
     count: 8

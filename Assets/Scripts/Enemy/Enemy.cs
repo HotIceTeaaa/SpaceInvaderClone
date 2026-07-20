@@ -69,7 +69,7 @@ namespace SpaceInvader
 
             if (_selectedEnemySO.hp <= 0f) {
                 PoolManager.Instance.Return(gameObject);
-                DataAndStates.Instance.score += _selectedEnemySO.scoreWorth;
+                DataAndStates.Instance.score += _selectedEnemySO.scoreWorth * DataAndStates.Instance.level;
             }
         }
 

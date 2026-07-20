@@ -33,6 +33,8 @@ namespace SpaceInvader
             return PlayerPrefs.GetInt(key, defaultValue);
         }
 
+        
+
         [ContextMenu("Clear All Keys")]
         public void ClearAllKeys() {
             PlayerPrefs.DeleteAll();

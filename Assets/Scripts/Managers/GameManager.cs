@@ -11,6 +11,12 @@ namespace SpaceInvader
         [SerializeField] private bool _isLooping;
         [SerializeField] private float _timeBetweenWaves;
 
+        [Header("Score Multiplier Related")]
+        [SerializeField] private float _increasePointBy;
+        [SerializeField] private float _decreasePointBy;
+        [SerializeField] private float _increaseLevelThreshold;
+
+        [Header("Other")]
         public int currentWave;
         public static GameManager Instance { get; private set; }
 
@@ -30,6 +36,7 @@ namespace SpaceInvader
                 waveSO.Initialize();
             }
 
+            ResetScoreMultiplier();
             GameStart();
         }
 
@@ -51,6 +58,7 @@ namespace SpaceInvader
         private void Update() {
             if (DataAndStates.Instance.isGameStart) {
                 HandleCanShoot();
+                DecreaseScoreMultiplier();
             }
         }
 
@@ -81,7 +89,7 @@ namespace SpaceInvader
                 Destroy(GameplayInitializer.Instance.player);
                 GameOver();
             } else {
-                //UI_Gameplay.Instance.UpdateHPBar();
+                UI_Gameplay.Instance.UpdateHPBar();
             }
         }
 
@@ -91,6 +99,41 @@ namespace SpaceInvader
 
             coinFromPrefs += coin;
             PlayerPreferences.Instance.SaveFloat("coin", coinFromPrefs);
+        }
+
+        public void IncreaseScoreMultiplier()
+        {
+            DataAndStates.Instance.point += _increasePointBy;
+
+            if(DataAndStates.Instance.point >= _increaseLevelThreshold)
+            {
+                DataAndStates.Instance.level += 1;
+                DataAndStates.Instance.point %= _increaseLevelThreshold;
+            }
+        }
+
+        private void DecreaseScoreMultiplier()
+        {
+            DataAndStates.Instance.point -= _decreasePointBy * DataAndStates.Instance.level;
+
+            if(DataAndStates.Instance.point <= 0f)
+            {
+                if(DataAndStates.Instance.level == 1)
+                {
+                    DataAndStates.Instance.point = 0;
+                }
+                else
+                {
+                    DataAndStates.Instance.level -= 1;
+                    DataAndStates.Instance.point = _increaseLevelThreshold;
+                }
+            }
+        }
+
+        public void ResetScoreMultiplier()
+        {
+            DataAndStates.Instance.level = 1;
+            DataAndStates.Instance.point = 0;
         }
     }
 }

@@ -24,6 +24,8 @@ namespace SpaceInvader {
 
             else if (collision.CompareTag("Player")) {
                 GameManager.Instance.HandlePlayerTakeDamage(_damage);
+                GameManager.Instance.ResetScoreMultiplier();
+
                 PoolManager.Instance.Return(BulletType.Enemy, gameObject);
                 GameplayInitializer.Instance.cameraShakeScript.Play();
             }

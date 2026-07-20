@@ -12,11 +12,18 @@ namespace SpaceInvader
         [SerializeField] public float shootCooldown;
         [SerializeField] public float maxHP;
 
+        [Header("Score Multiplier Related")]
+        public float level;
+        public float point;
+
+        [Header("Other")]
         public Timer shootTimer;
         public bool canShoot;
         public float hp;
         public float score;
         public float coin;
+
+        
 
         public static DataAndStates Instance { get; private set; }
         private void Awake() {
@@ -42,7 +49,7 @@ namespace SpaceInvader
 
         public float CalculateAndSetCoin()
         {
-            coin = score / 5;
+            coin = score;
             return coin;
         }
     }
