@@ -79,6 +79,7 @@ namespace SpaceInvader
                 DataAndStates.Instance.score += _selectedEnemySO.scoreWorth * DataAndStates.Instance.level;
                 GameManager.Instance.IncreaseScoreMultiplier();
                 UI_Gameplay.Instance.ShowScoreIndicator(gameObject.transform.position, _selectedEnemySO.scoreWorth);
+                SFXManager.Instance.PlaySFX(SFX.EnemyDeath);
             }
         }
 

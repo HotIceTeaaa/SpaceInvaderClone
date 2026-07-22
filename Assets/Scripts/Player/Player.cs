@@ -20,6 +20,7 @@ namespace SpaceInvader
 
         public void Shoot() {
             if (DataAndStates.Instance.canShoot) {
+                SFXManager.Instance.PlaySFX(SFX.PlayerShoot);
                 Vector3 bulletSpawnPos = Vector3.zero;
                 
                 switch(shipSO.type)

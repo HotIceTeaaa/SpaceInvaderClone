@@ -16,6 +16,7 @@ namespace SpaceInvader
         }
 
         public IEnumerator AnimateScoreText(){
+            SFXManager.Instance.PlayLoopedSFX(SFX.ScoreIncrements);
             float temp = 0f;
 
             while (temp < DataAndStates.Instance.score)
@@ -26,6 +27,7 @@ namespace SpaceInvader
             }
 
             _scoreText.text = $"{DataAndStates.Instance.score}";
+            SFXManager.Instance.MuteLoopedSFX();
         }
 
         public IEnumerator AnimateCoinText(){

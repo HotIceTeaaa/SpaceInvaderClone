@@ -108,7 +108,7 @@ namespace SpaceInvader
 
         private void AddAndSaveCoins(){
             int coin = DataAndStates.Instance.CalculateAndSetCoin();
-            int coinFromPrefs = PlayerPreferences.Instance.GetInt("coin", -9999);
+            int coinFromPrefs = PlayerPreferences.Instance.GetInt("coin", 0);
 
             coinFromPrefs += coin;
             PlayerPreferences.Instance.SaveInt("coin", coinFromPrefs);

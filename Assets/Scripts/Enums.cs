@@ -15,3 +15,13 @@ public enum ShipType
     Dates,
 }
 
+public enum SFX
+{
+    ButtonClick,
+    ButtonHover,
+    PlayerDeath,
+    PlayerShoot,
+    EnemyDeath,
+    ProjectileHit,
+    ScoreIncrements
+}

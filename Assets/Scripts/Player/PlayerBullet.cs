@@ -37,6 +37,7 @@ namespace SpaceInvader
                 enemyScript.HandleEnemyTakeDamage(_damage);
 
                 PoolManager.Instance.Return(BulletType.Player, gameObject);
+                SFXManager.Instance.PlaySFX(SFX.ProjectileHit);
             }
         }
 

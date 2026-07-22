@@ -29,6 +29,8 @@ namespace SpaceInvader {
 
                 PoolManager.Instance.Return(BulletType.Enemy, gameObject);
                 GameplayInitializer.Instance.cameraShakeScript.Play();
+
+                SFXManager.Instance.PlaySFX(SFX.PlayerDeath);
             }
         }
 
