@@ -8,3 +8,20 @@ public enum EnemyType {
     Laserer
 }
 
+public enum ShipType
+{
+    Grape,
+    Peach,
+    Dates,
+}
+
+public enum SFX
+{
+    ButtonClick,
+    ButtonHover,
+    PlayerDeath,
+    PlayerShoot,
+    EnemyDeath,
+    ProjectileHit,
+    ScoreIncrements
+}

@@ -1,17 +1,20 @@
 using UnityEngine;
-using System.Collections;
+
 
 namespace SpaceInvader
 {
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
+        [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private EnemySO[] _enemySOs;
+
         private EnemySO _selectedEnemySO;
         private Timer _shootTimer;
         private Transform[] _waypoints;
         private int _waypointIndex = 0;
         private float _speedMultiplier;
+        private float _hp;
 
         public void Initialize(EnemyType type, Transform pathTransform, float speedMultiplier) {
             switch (type) {
@@ -40,6 +43,9 @@ namespace SpaceInvader
             for (int i = 0; i < pathTransform.childCount; i++) {
                 _waypoints[i] = pathTransform.GetChild(i).transform;
             }
+
+            //init hp
+            _hp = _selectedEnemySO.hp;
         }
 
         private void Update() {
@@ -60,26 +66,20 @@ namespace SpaceInvader
         private void AttemptShoot() {
             if (Random.value < _selectedEnemySO.shootThreshold) {
                 Vector3 bulletSpawnPos = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
-                GameObject enemyBullet = PoolManager.Instance.GetAndSetPositionRotation(BulletType.Enemy, bulletSpawnPos, Quaternion.identity);
-
-                StartCoroutine(ReturnAfter(BulletType.Enemy, enemyBullet, _selectedEnemySO.enemyBulletLifespan));
+                PoolManager.Instance.GetAndSetPositionRotation(BulletType.Enemy, bulletSpawnPos, Quaternion.identity);
             }
-        }
-
-        private IEnumerator ReturnAfter(BulletType type, GameObject obj, float lifespan) {
-            yield return new WaitForSeconds(lifespan);
-
-            if (obj.activeSelf) {
-                PoolManager.Instance.Return(type, obj);
-            }
-        }
+        } 
 
         public void HandleEnemyTakeDamage(float dmg) {
-            _selectedEnemySO.hp -= dmg;
+            _hp -= dmg;
+            PoolManager.Instance.GetAndSetPositionRotationParticleSystem(gameObject.transform.position, Quaternion.identity);
 
-            if (_selectedEnemySO.hp <= 0f) {
+            if (_hp <= 0f) {
                 PoolManager.Instance.Return(gameObject);
-                DataAndStates.Instance.score += _selectedEnemySO.scoreWorth;
+                DataAndStates.Instance.score += _selectedEnemySO.scoreWorth * DataAndStates.Instance.level;
+                GameManager.Instance.IncreaseScoreMultiplier();
+                UI_Gameplay.Instance.ShowScoreIndicator(gameObject.transform.position, _selectedEnemySO.scoreWorth);
+                SFXManager.Instance.PlaySFX(SFX.EnemyDeath);
             }
         }
 

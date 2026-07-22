@@ -47,6 +47,6 @@ MonoBehaviour:
   _playerBulletPrefab: {fileID: 4062102468881578171, guid: 57d9b14bb50c8ef449bac093e6063665, type: 3}
   _playerBulletCount: 50
   _enemyPrefab: {fileID: 777130959294620410, guid: 7ae702c39d9e65c4bb6de8d9e944a012, type: 3}
-  _enemyCount: 30
+  _enemyCount: 50
   _enemyBulletPrefab: {fileID: 4062102468881578171, guid: 156c2f49b2afd89498ada1c968134e8a, type: 3}
-  _enemyBulletCount: 100
+  _enemyBulletCount: 40

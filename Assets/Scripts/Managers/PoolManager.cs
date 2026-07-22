@@ -19,6 +19,16 @@ namespace SpaceInvader
         [SerializeField] private int _enemyBulletCount = 100;
         private Queue<GameObject> _enemyBulletShelf = new Queue<GameObject>();
 
+        [Header("Score Indicator Pool")]
+        [SerializeField] private GameObject _scoreIndicatorPrefab;
+        [SerializeField] private int _scoreIndicatorCount = 20;
+        private Queue<GameObject> _scoreIndicatorShelf = new Queue<GameObject>();
+
+        [Header("Particle System Pool")]
+        [SerializeField] private GameObject _particleSystemPrefab;
+        [SerializeField] private int _particleSystemCount = 20;
+        private Queue<GameObject> _particleSystemShelf = new Queue<GameObject>();
+
         public static PoolManager Instance { get; private set; }
 
         private void Awake() {
@@ -42,6 +52,16 @@ namespace SpaceInvader
 
             for (int i = 0; i < _enemyCount; i++) {
                 _enemyShelf.Enqueue(CreateNew(_enemyPrefab));
+            }
+
+            for (int i = 0; i < _scoreIndicatorCount; i++)
+            {
+                _scoreIndicatorShelf.Enqueue(CreateNew(_scoreIndicatorPrefab));
+            }
+
+            for (int i = 0; i < _particleSystemCount; i++)
+            {
+                _particleSystemShelf.Enqueue(CreateNew(_particleSystemPrefab));
             }
         }
 
@@ -72,8 +92,27 @@ namespace SpaceInvader
             return obj;
         }
 
+        public GameObject GetAndSetPositionRotationScoreIndicator(Vector3 position, Quaternion rotation)
+        {
+            GameObject obj = _scoreIndicatorShelf.Dequeue();
+
+            obj.transform.SetPositionAndRotation(position, rotation);
+            obj.SetActive(true);
+
+            return obj;
+        }
+
+        public GameObject GetAndSetPositionRotationParticleSystem(Vector3 position, Quaternion rotation)
+        {
+            GameObject obj = _particleSystemShelf.Dequeue();
+
+            obj.transform.SetPositionAndRotation(position, rotation);
+            obj.SetActive(true);
+
+            return obj;
+        }
+
         public void Return(BulletType type, GameObject obj) {
-            obj.SetActive(false);
 
             switch (type) {
                 case BulletType.Player:
@@ -83,11 +122,23 @@ namespace SpaceInvader
                     _enemyBulletShelf.Enqueue(obj);
                     break;
             }
+            obj.SetActive(false);
         }
 
         public void Return(GameObject obj) {
-            obj.SetActive(false);
             _enemyShelf.Enqueue(obj);
+            obj.SetActive(false);
+        }
+
+        public void ReturnScoreIndicator(GameObject obj)
+        {
+            _scoreIndicatorShelf.Enqueue(obj);
+            obj.SetActive(false);
+        }
+        public void ReturnParticleSystem(GameObject obj)
+        {
+            _particleSystemShelf.Enqueue(obj);
+            obj.SetActive(false);
         }
 
         private GameObject CreateNew(GameObject prefab) {

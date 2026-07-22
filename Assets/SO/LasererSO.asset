@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LasererSO
   m_EditorClassIdentifier: Assembly-CSharp::SpaceInvader.EnemySO
   sprite: {fileID: -1553899934527847533, guid: 3ed754d8be893e34baf5ea085f04783e, type: 3}
-  enemyBulletLifespan: 0.8
+  enemyBulletLifespan: 2
   shootCooldown: 1
-  shootThreshold: 0.5
+  shootThreshold: 0.3
   scoreWorth: 200
   hp: 3
   speed: 2

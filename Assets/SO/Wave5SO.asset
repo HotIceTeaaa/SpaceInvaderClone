@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 6390741087654847309, guid: df9dce56aaddee04d8d44d01f2613da0, type: 3}
   - {fileID: 7910407541789435324, guid: b1b356c32d3f0e948a2801d1a171b3f9, type: 3}
   enemySpeedMultiplier: 1
+  enemySpawnMultiplier: 1
   enemyList:
   - type: 0
     count: 4

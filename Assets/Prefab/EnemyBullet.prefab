@@ -182,3 +182,4 @@ MonoBehaviour:
   _rb: {fileID: 7636246681649196612}
   _speed: 10
   _damage: 1
+  _enemyBulletLifespan: 2

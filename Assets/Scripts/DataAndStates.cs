@@ -8,15 +8,18 @@ namespace SpaceInvader
         public bool isGameStart = false;
         public bool isGameOver = false;
 
-        [Header("Player Related")]
-        [SerializeField] public float shootCooldown;
-        [SerializeField] public float maxHP;
+        [Header("Score Multiplier Related")]
+        public float level;
+        public float point;
 
+        [Header("Other")]
         public Timer shootTimer;
         public bool canShoot;
+        public float maxHP;
         public float hp;
         public float score;
-        public float coin;
+        public int coin;
+
 
         public static DataAndStates Instance { get; private set; }
         private void Awake() {
@@ -30,19 +33,23 @@ namespace SpaceInvader
             DontDestroyOnLoad(gameObject);
         }
 
-        public void Initialize() {
+        public void Initialize(PlayerShipSO playerShipSO) {
             canShoot = true;
-            shootTimer = new Timer(shootCooldown);
-            hp = maxHP;
+
+            shootTimer = new Timer(playerShipSO.shootCooldown);
+            maxHP = playerShipSO.maxHP;
+            hp = playerShipSO.maxHP;
+
+            score = 0;
         }
 
         public void DecreasePlayerHP(float damage) {
             hp -= damage;
         }
 
-        public float CalculateAndSetCoin()
+        public int CalculateAndSetCoin()
         {
-            coin = score / 5;
+            coin = (int) score / 5;
             return coin;
         }
     }
